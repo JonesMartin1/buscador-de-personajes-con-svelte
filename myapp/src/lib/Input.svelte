@@ -7,12 +7,12 @@
     const handleInput = (event) => 
         value = event.target.value
 
-    $: if(value.length>2){
-        loading = true
+    $: if(loading==true){
         fetch (`https://gateway.marvel.com:443/v1/public/characters?ts=1&name=${value}&apikey=bfaa7b237bb944372278afba5cb59bad&hash=69bb2ecd29ffccb8c99ff39fff85fb16`)
         .then(res => res.json())
         .then(JSON => {
             response = JSON.data.results || []
+            console.log(response)
         })
         loading = false
     }
@@ -20,6 +20,7 @@
     function buscar(){
         loading = true
     }
+    
 </script>
 
 <input  
