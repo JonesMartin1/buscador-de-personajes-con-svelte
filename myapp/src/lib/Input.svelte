@@ -30,13 +30,14 @@
 
 />
 
+
 <button on:click={buscar}>
     Buscar
 
 </button>
 
 {#if loading}
-    cargando...
+    cargando....
 
 {:else}
     {#if response.length > 0}
